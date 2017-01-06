@@ -105,7 +105,7 @@ for ($i = 0; $i < $days; $i++) {
         $startRange = $dt->format('Y-m-d 00:00:00');
         $endRange = $dt->format('Y-m-d 23:59:59');
     }
-    $table = ($first || $last) ? "(TABLE_DATE_RANGE([githubarchive:day.{$calcDate}], TIMESTAMP('{$startRange}'), TIMESTAMP('{$endRange}') ) )" : "[githubarchive:day.{$calcDate}]";
+    $table = ($first || $last) ? "(TABLE_DATE_RANGE([githubarchive:day.], TIMESTAMP('{$startRange}'), TIMESTAMP('{$endRange}') ) )" : "[githubarchive:day.{$calcDate}]";
 
     $query = <<<SQL
 SELECT 
