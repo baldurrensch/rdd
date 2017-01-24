@@ -67,8 +67,8 @@ class RddCommand extends Command
 
         $timeStart = microtime(true);
 
-        $client = new Google_Client();
-        $client->useApplicationDefaultCredentials();
+        // $client = new Google_Client();
+        // $client->useApplicationDefaultCredentials();
 
         $projectId = 'rdd-test';
         $bigQuery = new BigQueryClient([
@@ -81,17 +81,17 @@ class RddCommand extends Command
 
         // $endDate cannot be later than today
         if (!empty($before) && dateIsValid($before) && strtotime($before) < time()) {
-            $endDT = new DateTime($before);
+            $endDT = new \DateTime($before);
         } else {
-            $endDT = new DateTime();
+            $endDT = new \DateTime();
         }
         $endDate = $endDT->format('Y-m-d');
 
         // $startDate cannot be later than today
         if (!empty($after) && dateIsValid($after) && strtotime($after) < time()) {
-            $startDT = new DateTime($after);
+            $startDT = new \DateTime($after);
         } else {
-            $startDT = new DateTime();
+            $startDT = new \DateTime();
             $startDT->modify('-28 day');
         }
         $startDate = $startDT->format('Y-m-d');
@@ -109,7 +109,7 @@ class RddCommand extends Command
         $interval = $startDT->diff($endDT);
         $days = $interval->days;
         for ($i = 0; $i < $days; $i++) {
-            $dt = new DateTime($startDate);
+            $dt = new \DateTime($startDate);
             $dt->modify("+{$i} day");
             $calcDate = $dt->format('Ymd');
             $first = ($i == 0) ? true : false;
