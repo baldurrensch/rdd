@@ -2,6 +2,7 @@
     "require": {
         "guzzlehttp/guzzle": "^6.2",
         "google/cloud": "^0.20.1",
-        "google/apiclient": "^2.0"
+        "google/apiclient": "^2.0",
+        "symfony/console": "^3.2"
     }
 }
