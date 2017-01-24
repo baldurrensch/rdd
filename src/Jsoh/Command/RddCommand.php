@@ -1,6 +1,6 @@
 <?php
 
-namespace Jsoh\Console\Command;
+namespace Jsoh\Command;
 
 use Google\Cloud\BigQuery\BigQueryClient;
 use Symfony\Component\Console\Command\Command;

@@ -1,8 +1,9 @@
 #!/usr/bin/env php
 <?php
+
 require __DIR__ . '/vendor/autoload.php';
 
-use Jsoh\Console\Command\RddCommand;
+use Jsoh\Command\RddCommand;
 use Symfony\Component\Console\Application;
 
 $command = new RddCommand();
